@@ -173,17 +173,17 @@ testimages = nb_read_data(table)
 
 image1, image2 = split_images(testimages, hnumpix, vnumpix)
 
-# lst = []
-# for i in range(1):
-# 	lst.append(image1)
+lst = []
+for i in range(1000):
+	lst.append(image1)
 
 # mm = cv2.createMergeMertens()
 # merge = mm.process((image1,image2))
 # print(np.max(merge))
 
-filestk = np.stack((image1))
+filestk = np.stack((lst))
 
-# file_write(filestk, imgfmt, 'test.fits')
+file_write(filestk, imgfmt, 'test.fits')
 
 print("# of pixels (width * height): " + str(hpix) + " * " + str(vpix))
 print("Binning factor: " + str(hbin) + " x " + str(vbin))
