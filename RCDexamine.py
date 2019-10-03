@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 import numba as nb
-import cv2
+#import cv2
 
 from astropy.io import fits
 from sys import platform
@@ -172,10 +172,15 @@ testimages = nb_read_data(table)
 # 	image1, image2 = split_images(testimages, hnumpix, vnumpix)
 
 image1, image2 = split_images(testimages, hnumpix, vnumpix)
+imsmall = image1[0:2,0:2]
+imsmall[0,0] = 1
+imsmall[0,1] = 2
+imsmall[1,0] = 3
+imsmall[1,1] = 4
 
 lst = []
-for i in range(1000):
-	lst.append(image1)
+for i in range(5):
+	lst.append(imsmall)
 
 # mm = cv2.createMergeMertens()
 # merge = mm.process((image1,image2))
